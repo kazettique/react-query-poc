@@ -1,0 +1,66 @@
+{
+  "quarterbacks": [
+    {
+      "id": 1,
+      "firstName": "Patrick",
+      "lastName": "Mahomes",
+      "teamId": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Tom",
+      "lastName": "Brady",
+      "teamId": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Josh",
+      "lastName": "Allen",
+      "teamId": 3
+    },
+    {
+      "id": 4,
+      "firstName": "Derek",
+      "lastName": "Carr",
+      "teamId": 4
+    },
+    {
+      "id": 5,
+      "firstName": "Aaron",
+      "lastName": "Rodgers",
+      "teamId": 5
+    },
+    {
+      "firstName": "Kyler",
+      "lastName": "Murray",
+      "teamId": 6,
+      "id": 6
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Kansas City Chiefs"
+    },
+    {
+      "id": 2,
+      "name": "Tampa Bay Buccaneers"
+    },
+    {
+      "id": 3,
+      "name": "Buffalo Bills"
+    },
+    {
+      "id": 4,
+      "name": "Las Vegas Raiders"
+    },
+    {
+      "id": 5,
+      "name": "Green Bay Packers"
+    },
+    {
+      "name": "Arizona Cardinals",
+      "id": 6
+    }
+  ]
+}
