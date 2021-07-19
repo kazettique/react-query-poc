@@ -6,6 +6,7 @@ import Planets from './components/Planets';
 import People from './components/People';
 // import logo from './logo.svg';
 // import './App.css';
+import EmployeeList from './components/EmployeeList';
 
 // Create a client
 // const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ function App(): ReactElement {
         <h1>Star Wars Info</h1>
         <Navbar setPage={setPage} />
         <div className="content">{page === 'planets' ? <Planets /> : <People />}</div>
+        <EmployeeList />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </>

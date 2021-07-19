@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import { useQuery, UseQueryResult } from 'react-query';
+import axios, { AxiosResponse } from 'axios';
 
 import Planet from './Planet';
 
@@ -8,9 +9,10 @@ import Planet from './Planet';
 // }
 
 const fetchPlanets = async (key: any) => {
-  console.log('key: ', key);
-  const res = await fetch(`http://swapi.dev/api/planets/?page=${key.queryKey[1]}`);
-  return res.json();
+  // console.log('key: ', key);
+  const response: AxiosResponse = await axios.get(`http://swapi.dev/api/planets/?page=${key.queryKey[1]}`);
+  // console.log('response: ', response);
+  return response.data;
 };
 
 // * NOTE
@@ -38,8 +40,8 @@ function Planets(): ReactElement {
   const { data, status } = useQuery(['planets', page], fetchPlanets, {
     // staleTime: 0,
     // cacheTime: 10,
-    onSuccess: () => console.log('data fetched with no problemo'),
-    onError: () => console.error('data fetched with error!!'),
+    // onSuccess: () => console.log('react-query: data fetched with no problemo'),
+    // onError: () => console.error('react-query: data fetched with error!!'),
   });
 
   // * NOTES
@@ -47,8 +49,6 @@ function Planets(): ReactElement {
   //   'person',
   //   fetchPerson
   // );
-
-  console.log('data: ', data);
 
   return (
     <div>
