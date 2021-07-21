@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios';
-import getAxiosPromise from './service';
+import getAxiosPromise from './service/getAxiosPromise';
 
 const API_URL = '/people/';
 const BASE_URL = 'http://swapi.dev/api/';

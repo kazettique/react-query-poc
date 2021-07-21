@@ -17,9 +17,9 @@ function App(): ReactElement {
   return (
     <>
       <div className="App">
-        <h1>Star Wars Info</h1>
-        <Navbar setPage={setPage} />
-        <div className="content">{page === 'planets' ? <Planets /> : <People />}</div>
+        {/* <h1>Star Wars Info</h1> */}
+        {/* <Navbar setPage={setPage} /> */}
+        {/* <div className="content">{page === 'people' ? <Planets /> : <People />}</div> */}
         <EmployeeList />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
