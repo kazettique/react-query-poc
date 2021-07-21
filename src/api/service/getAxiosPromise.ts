@@ -1,8 +1,7 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig, AxiosPromise } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import showLogger from './showLogger';
-import handleSuccess from './handleSuccess';
-import handleFailure from './handleFailure';
-import { LoggerTypeEnum } from './enums';
+import { handleSuccess, handleFailure } from './axiosHandlers';
+import { LoggerTypeEnum, LoggerServiceEnum } from './enums';
 
 const defaultConfig: AxiosRequestConfig = {
   url: '',
@@ -16,21 +15,17 @@ const defaultConfig: AxiosRequestConfig = {
   // withAccessToken: true,
 };
 
-// type ServiceReturnType = () => AxiosInstance;
-
-function getAxiosPromise<ResponseDataType>(
-  axiosConfig: AxiosRequestConfig,
-  queryKey: string
-): AxiosPromise<ResponseDataType> {
+function getAxiosPromise<TResType>(axiosConfig: AxiosRequestConfig, queryKey: string): Promise<TResType> {
   const apiConfig: AxiosRequestConfig = { ...defaultConfig, ...axiosConfig };
 
-  // const { name } = serviceConfig;
-
-  const callAPI = (): AxiosPromise<ResponseDataType> => {
+  const callAPI = () => {
     const axiosInstance: AxiosInstance = axios.create(apiConfig);
 
-    // showLogger(`${name}_REQUEST`, LoggerTypeEnum.INFO);
-    showLogger({ action: `${queryKey}_REQUEST`, loggerType: LoggerTypeEnum.INFO });
+    showLogger({
+      serviceName: LoggerServiceEnum.AXIOS,
+      action: `${queryKey}_REQUEST`,
+      loggerType: LoggerTypeEnum.INFO,
+    });
 
     return axiosInstance(apiConfig)
       .then((response) => handleSuccess(response, queryKey))
@@ -42,6 +37,7 @@ function getAxiosPromise<ResponseDataType>(
 
 export default getAxiosPromise;
 
+// * ANOTHER SOLUTION WITH CREATING AXIOS CLASS
 // * Ref: https://levelup.gitconnected.com/enhance-your-http-request-with-axios-and-typescript-f52a6c6c2c8e
 // abstract class HttpClient {
 //   protected readonly instance: AxiosInstance;
