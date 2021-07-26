@@ -1,29 +1,36 @@
 import { ReactElement, useState } from 'react';
-// import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import Navbar from './components/Navbar';
-import Planets from './components/Planets';
-import People from './components/People';
-// import logo from './logo.svg';
-// import './App.css';
+import { Switch, Route, NavLink } from 'react-router-dom';
 import EmployeeList from './components/EmployeeList';
-
-// Create a client
-// const queryClient = new QueryClient();
+import CreateEmployee from './components/CreateEmployee';
 
 function App(): ReactElement {
-  const [page, setPage] = useState('planets');
-
   return (
-    <>
-      <div className="App">
-        {/* <h1>Star Wars Info</h1> */}
-        {/* <Navbar setPage={setPage} /> */}
-        {/* <div className="content">{page === 'people' ? <Planets /> : <People />}</div> */}
-        <EmployeeList />
+    <div className="bg-gray-800 text-gray-300 h-screen w-screen overflow-scroll">
+      <div className="container mx-auto">
+        <div className="flex justify-center p-3">
+          <NavLink
+            to="/employeeList"
+            className="block border-b-4 border-transparent p-2 m-2 text-yellow-300 duration-300 uppercase"
+            activeClassName="border-b-4 border-yellow-300"
+          >
+            Employee List
+          </NavLink>
+          <NavLink
+            to="/createEmployee"
+            className="block border-b-4 border-transparent p-2 m-2 text-yellow-300 duration-300 uppercase"
+            activeClassName="border-b-4 border-yellow-300"
+          >
+            Create Employee
+          </NavLink>
+        </div>
+        <Switch>
+          <Route strict sensitive path="/employeeList" component={EmployeeList} />
+          <Route strict sensitive path="/createEmployee" component={CreateEmployee} />
+        </Switch>
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
-    </>
+    </div>
   );
 }
 

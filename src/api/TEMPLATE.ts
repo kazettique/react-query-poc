@@ -24,6 +24,7 @@ function exampleFetcherFunction(id: number): Promise<ExpectedDataType[]> {
 }
 
 // TODO: Edit here
+// * FETCH FUNCTION 1: For GET method
 function useExampleData(id: number): UseQueryResult<ExpectedDataType[], Error> {
   const queryResult = useQuery<ExpectedDataType[], Error>(
     [QUERY_KEY, id],
@@ -33,5 +34,8 @@ function useExampleData(id: number): UseQueryResult<ExpectedDataType[], Error> {
 
   return queryResult;
 }
+
+// TODO: Edit here
+// * FETCH FUNCTION 2: For POST, PUT, DELETE method
 
 export default useExampleData;

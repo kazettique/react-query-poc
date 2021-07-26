@@ -9,7 +9,7 @@ const API_URL = '/employee/';
 const QUERY_KEY = QueryKeyEnum.EMPLOYEE_LIST;
 
 //  API response data type
-type EmployeeDataType = {
+export type EmployeeDataType = {
   id: number;
   name: string;
   email: string;

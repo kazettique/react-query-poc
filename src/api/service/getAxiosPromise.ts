@@ -7,6 +7,7 @@ const defaultConfig: AxiosRequestConfig = {
   url: '',
   method: 'GET',
   params: {},
+  data: {},
   baseURL: '',
   // name: 'CHANGE_YOUR_SERVICE_NAME_HERE',
   // currentEnv: process.env.NODE_ENV,
