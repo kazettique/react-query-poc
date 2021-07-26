@@ -1,0 +1,7 @@
+node_modules
+build
+
+postcss.config.js
+tailwind.config.js
+craco.config.js
+.eslintrc
