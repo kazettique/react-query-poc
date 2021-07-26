@@ -62,5 +62,35 @@
       "name": "Arizona Cardinals",
       "id": 6
     }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@gmail.com",
+      "gender": "male",
+      "age": 27
+    },
+    {
+      "id": 2,
+      "name": "Brian",
+      "email": "brian@gmail.com",
+      "gender": "male",
+      "age": 24
+    },
+    {
+      "id": 3,
+      "name": "Sherry",
+      "email": "sherry@gmail.com",
+      "gender": "female",
+      "age": 22
+    },
+    {
+      "id": 4,
+      "name": "Marry",
+      "email": "marry@gmail.com",
+      "gender": "female",
+      "age": 17
+    }
   ]
 }
